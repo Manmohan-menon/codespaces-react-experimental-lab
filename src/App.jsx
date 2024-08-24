@@ -1,27 +1,35 @@
 import './App.css';
+import HeaderComponent from './components/HeaderComponent';
+import SidePanelComponent from './components/SidePanelComponent';
+import ImageCarousel from './components/ImageCarousel';
+import FooterComponent from './components/FooterComponent';
 
 function App() {
+  //previous approach
+  // const images = [
+  //   '../paulomi_1.jpg',
+  //   '../paulomi_2.jpg',
+  //   '../paulomi_3.jpg',
+  //   '../paulomi_4.jpg',
+  //   '../paulomi_5.jpg',
+  // ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
+      <HeaderComponent />
+      <div className='main-content'>
+        <SidePanelComponent />
+        <main>
+          <div>
+            <ImageCarousel />
+          </div>
+          <div className='cardClass'>
+            <div className='cardClass1'>Upcoming Events</div>
+            <div className='cardClass2'>Past Events</div>
+            <div className='cardClass3'>Collaborations</div>
+          </div>
+        </main>
+      </div>
+      <FooterComponent />  
     </div>
   );
 }

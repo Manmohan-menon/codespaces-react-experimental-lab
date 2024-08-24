@@ -1,29 +1,42 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-content {
+  display: flex;
+  flex: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
+  flex: 1;
+  padding: 20px;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.cardClass {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  width: 80%;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-.heart {
-  color: #ff0000;
+.cardClass > .cardClass1, .cardClass > .cardClass2, .cardClass > .cardClass3 {
+  background-color: #e0e0e0;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .small {

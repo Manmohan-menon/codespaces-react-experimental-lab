@@ -1,0 +1,19 @@
+.footer{
+    text-align: center;
+    padding: 1em 0;
+    background: rgba(132, 128, 134, 0.703);
+    color: white;
+    box-shadow: 0px -7px 5px 1px rgba(142, 128, 128, 0.75);
+    -webkit-box-shadow: 0px -7px 5px 1px rgba(142, 128, 128, 0.75);
+    -moz-box-shadow: 0px -7px 5px 1px rgba(142, 128, 128, 0.75);
+    margin-top: 2rem;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+}
