@@ -5,14 +5,6 @@ import ImageCarousel from './components/ImageCarousel';
 import FooterComponent from './components/FooterComponent';
 
 function App() {
-  //previous approach
-  // const images = [
-  //   '../paulomi_1.jpg',
-  //   '../paulomi_2.jpg',
-  //   '../paulomi_3.jpg',
-  //   '../paulomi_4.jpg',
-  //   '../paulomi_5.jpg',
-  // ];
   return (
     <div className="App">
       <HeaderComponent />

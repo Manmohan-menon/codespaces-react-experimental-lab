@@ -1,3 +1,8 @@
+:root {
+  --primary-color: #800000; /* Maroon */
+  --accent-color: #d4af37;  /* Gold */
+  --background-color: #f5f5f5; /* Light cream */
+}
 .App {
   text-align: center;
   display: flex;

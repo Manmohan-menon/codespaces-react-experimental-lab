@@ -4,11 +4,13 @@
     position: relative;
     top: 1rem;
     left: 0;
-    background-color: rgba(132, 128, 134, 0.703);
-    color: rgb(237, 237, 246);
+    background-color: rgba(132, 0, 0, 0.8); /* Deep red with transparency */
+    color: var(--background-color);
+    border-radius: 0 5px 5px 0;
+    /* background-color: rgba(132, 128, 134, 0.703);
+    color: rgb(237, 237, 246); */
     transition: width 0.3s;
-    border-radius: 2%;
-    /* //box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    /* border-radius: 2%; */
     box-shadow: 7px 0px 5px 1px rgba(142, 128, 128, 0.75);
     -webkit-box-shadow: 7px 0px 5px 1px rgba(142, 128, 128, 0.75);
     -moz-box-shadow: 7px 9px 5px 1px rgba(142, 128, 128, 0.75);

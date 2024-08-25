@@ -3,11 +3,14 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    background-color: #ffff;
+    /* background-color: #ffff;
     border-bottom: inset;
     box-shadow: 0px 9px 5px 1px rgba(142, 128, 128, 0.75);
     -webkit-box-shadow: 0px 9px 5px 1px rgba(142, 128, 128, 0.75);
-    -moz-box-shadow: 0px 9px 5px 1px rgba(142, 128, 128, 0.75);
+    -moz-box-shadow: 0px 9px 5px 1px rgba(142, 128, 128, 0.75); */
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   .logo {
     width: 7.5rem;
