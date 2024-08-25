@@ -1,31 +1,47 @@
 import React, { useState } from "react";
-import { FaHome, FaInfoCircle, FaEnvelope, FaBars } from 'react-icons/fa';
+import { FaHome, FaInfoCircle, FaEnvelope, FaBars, FaTheaterMasks, FaShoppingBag, FaPlus, FaMinus } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import '../styles/SidePanelComponent.css';
 
 const SidePanelComponent = () => {
     const [isOpen, setIsOpen] = useState(true);
+    const [isResized, setIsResized] = useState(false);
   
     const toggleSidebar = () => {
       setIsOpen(!isOpen);
     };
+    const toggleResize = () => {
+      setIsResized(!isResized);
+    };
     return (
-        <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
+        <div className={`sidebar ${isOpen ? 'open' : 'closed'}`} style={{ width: isResized ? '1%' : '' }}>
           <div className="toggle-btn" onClick={toggleSidebar}>
             <FaBars />
           </div>
-          <div className="menu">
-            <a href="#home" className="menu-item">
+          {!isOpen && (<div className="resize-btn" onClick={toggleResize}>
+                {isResized ? <FaPlus /> : <FaMinus />}
+            </div>)}
+          <div className={`menu ${isResized ? 'menu-hidden' : ''}`}>
+            <Link to="/" className="menu-item">
               <FaHome />
               {isOpen && <span>Home</span>}
-            </a>
-            <a href="#aboutus" className="menu-item">
+            </Link>
+            <Link to="/aboutus" className="menu-item">
               <FaInfoCircle />
               {isOpen && <span>About Us</span>}
-            </a>
-            <a href="#contactus" className="menu-item">
+            </Link>
+            <Link to="/contactus" className="menu-item">
               <FaEnvelope />
               {isOpen && <span>Contact Us</span>}
-            </a>
+            </Link>
+            <Link to="/lessons" className="menu-item">
+              <FaTheaterMasks />
+              {isOpen && <span>Lessons</span>}
+            </Link>
+            <Link to="/merchandise" className="menu-item">
+              <FaShoppingBag />
+              {isOpen && <span>Merchandise</span>}
+            </Link>
           </div>
         </div>
       );

@@ -1,29 +1,39 @@
 .carousel-container {
-    /* width: 100%;
-    max-width: 800px;
-    margin: auto; */
-    width: 100%;
-    height: 25rem;
-    /* background-color: #3a3737;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
-    margin-bottom: 20px;
-    border-radius: 10px;
-    background-color: #f7f2e7; /* Light cream */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .carousel-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin:auto;
-  }
+  width: 100%;
+  height: 25rem;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #ffffff; /* 60% White background for the main area */
+  border: 1px solid #e0e0e0; /* 30% Light grey border */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
 
-  .carousel .slide img {
-    width: 100%;
-    max-width: 600px;
-    height: 400px;
-    object-fit:contain;
-  }
-  
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+
+.carousel .slide img {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  object-fit: contain;
+  border: 2px solid #e0e0e0; /* 30% Light grey border around images */
+  border-radius: 5px; /* Slight rounding to soften edges */
+}
+
+.carousel .control-arrow {
+  color: #800000 !important; /* 10% Primary color for navigation arrows */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for visibility */
+  border-radius: 50%; /* Rounded arrows for a modern look */
+  padding: 10px;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.carousel .control-arrow:hover {
+  background-color: #e0e0e0; /* Hover effect with light grey background */
+  color: #333; /* Change arrow color on hover for better contrast */
+}

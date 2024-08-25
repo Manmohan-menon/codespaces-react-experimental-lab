@@ -1,21 +1,56 @@
-.footer{
+.footer {
     text-align: center;
     padding: 1em 0;
-    /* background: rgba(132, 128, 134, 0.703);
-    color: white; */
-    box-shadow: 0px -7px 5px 1px rgba(142, 128, 128, 0.75);
-    -webkit-box-shadow: 0px -7px 5px 1px rgba(142, 128, 128, 0.75);
-    -moz-box-shadow: 0px -7px 5px 1px rgba(142, 128, 128, 0.75);
+    background-color: #e0e0e0; /* 30% Mild grey background */
+    color: #333; /* 60% Dark grey text for readability */
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for consistency */
     margin-top: 2rem;
-    background-color: var(--primary-color);
-    color: var(--background-color);
-}
-
-.icons {
+    border-top: 2px solid #800000; /* 10% Primary color as a top border */
+  }
+  
+  .footer .icons {
     display: flex;
     gap: 10px;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content:space-around;
     align-items: baseline;
-}
+  }
+  
+  .footer .icons a {
+    color: #800000; /* 10% Primary color for icon links */
+    transition: color 0.3s;
+  }
+  
+  .footer .icons a:hover {
+    color: #333; /* Dark grey text color on hover */
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+        padding: 1.5em 0; /* Increase padding for tablets */
+        text-align: center; /* Center text for better readability */
+    }
+  
+    .footer .icons {
+        flex-direction: column; /* Stack icons vertically */
+        gap: 15px; /* Increase space between icons */
+        align-items: center; /* Center icons */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer {
+        padding: 1em 0; /* Reduce padding for small screens */
+        text-align: center; /* Center text for better readability */
+    }
+  
+    .footer .icons {
+        flex-direction: column; /* Stack icons vertically */
+        gap: 10px; /* Adjust space between icons */
+        align-items: center; /* Center icons */
+    }
+  
+    .footer .icons a {
+        font-size: 0.9rem; /* Adjust icon size for small screens */
+    }
+  }

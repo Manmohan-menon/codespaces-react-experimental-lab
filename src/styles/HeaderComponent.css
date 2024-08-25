@@ -1,38 +1,115 @@
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    /* background-color: #ffff;
-    border-bottom: inset;
-    box-shadow: 0px 9px 5px 1px rgba(142, 128, 128, 0.75);
-    -webkit-box-shadow: 0px 9px 5px 1px rgba(142, 128, 128, 0.75);
-    -moz-box-shadow: 0px 9px 5px 1px rgba(142, 128, 128, 0.75); */
-    background-color: var(--primary-color);
-    color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #ffffff; /* 60% White background */
+  border-bottom: 2px solid #800000; /* 10% Primary color as border */
+  color: #333; /* 30% Dark grey text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.header .logo {
+  width: 6.5rem;
+  height: 5rem;
+  margin-right: 20px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* transform: rotate(3.8deg); */
+  animation: pendulum 2s infinite ease-in-out;
+}
+
+.header .icons{
+  display: flex;
+  gap: 10px;
+  color: #800000; /* 10% Primary color for icons to draw attention */
+}
+
+@keyframes pendulum {
+  0% {
+      transform: rotate(3.8deg);
   }
+  25% {
+      transform: rotate(5deg);
+  }
+  50% {
+      transform: rotate(3.8deg);
+  }
+  75% {
+      transform: rotate(2.6deg);
+  }
+  100% {
+      transform: rotate(3.8deg);
+  }
+}
+
+.header .title {
+  flex: 1;
+  text-align: center;
+  box-shadow: 6.5px 4px 5px 1px rgba(142, 128, 128, 0.75); /* Milder shadow */
+  -webkit-box-shadow: 6.5px 4px 5px 1px rgba(142, 128, 128, 0.75);
+  -moz-box-shadow: 6.5px 4px 5px 1px rgba(142, 128, 128, 0.75);
+  max-width: 18rem;
+  border-radius: 45%;
+  height: 2rem;
+  font-weight: 600;
+  text-decoration: underline;
+  color: #800000; /* 10% Primary color for text emphasis */
+  background-color: #e0e0e0; /* 30% Mild grey background for title area */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .header {
+      flex-direction: row;
+      align-items: center;
+      text-align: center;
+      padding: 15px;
+  }
+
   .logo {
-    width: 7.5rem;
-    height: 7rem;
-    margin-right: 20px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transform: rotate(3.5deg);
+      width: 6rem;
+      height: 6rem;
+      margin-right: 0;
+      margin-bottom: 10px;
   }
+
   .header .title {
-    flex: 1;
-    text-align: center;
-    box-shadow: 6.5px 4px 5px 1px rgba(142, 128, 128, 0.75);
-    -webkit-box-shadow: 6.5px 4px 5px 1px rgba(142, 128, 128, 0.75);
-    -moz-box-shadow: 6.5px 4px 5px 1px rgba(142, 128, 128, 0.75);
-    max-width: 18rem;
-    border-radius: 45%;
-    height: 2rem;
-    font-weight: 600;
-    text-decoration: underline;
+      max-width: 100%;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
   }
+
   .header .icons {
-    display: flex;
-    gap: 10px;
+      justify-content: center;
+      gap: 15px;
   }
+}
+
+@media (max-width: 480px) {
+  .header {
+      padding: 10px;
+  }
+
+  .logo {
+      width: 3.5rem;
+      height: 2.5rem;
+  }
+
+  .header .title {
+      font-size: 1rem;
+      padding: 5px 10px;
+      width:1.5rem;
+      background-color: #fff;
+      box-shadow:none;
+  }
+
+  .header .icons {
+      gap: 8px;
+  }
+}

@@ -1,0 +1,69 @@
+/* AboutUs.css */
+/* .about-us {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-us h1 {
+    color: #800000;
+}
+
+.about-us p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+.about-us img{
+    width: 100%;
+    height: 20rem;
+    object-fit: contain;
+} */
+.about-us {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    margin-bottom: 30px;
+    max-width: 800px;
+}
+
+.about-us h1 {
+    color: #800000;
+    text-align: center;
+    font-weight: bold;
+}
+
+.about-us h3 {
+    color: #800000;
+    text-align: center;
+}
+
+.about-us i {
+    color: #008080; /* 10% Accent Color */
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.about-us p {
+    font-size: 1.1rem; /* Adjusted for readability */
+    line-height: 1.6;
+    color: #333333; /* A neutral text color for the body */
+    text-align: justify;
+}
+
+.about-us img {
+    width: 100%;
+    height: auto; /* Let the height adjust naturally */
+    object-fit: cover; /* Ensures the image covers the space */
+    border-radius: 8px; /* Matches the container's border-radius */
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .about-us p {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+}

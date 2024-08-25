@@ -1,54 +1,75 @@
 .sidebar {
-    height: calc(95vh -2rem);
-    width: 12rem;
-    position: relative;
-    top: 1rem;
-    left: 0;
-    background-color: rgba(132, 0, 0, 0.8); /* Deep red with transparency */
-    color: var(--background-color);
-    border-radius: 0 5px 5px 0;
-    /* background-color: rgba(132, 128, 134, 0.703);
-    color: rgb(237, 237, 246); */
-    transition: width 0.3s;
-    /* border-radius: 2%; */
-    box-shadow: 7px 0px 5px 1px rgba(142, 128, 128, 0.75);
-    -webkit-box-shadow: 7px 0px 5px 1px rgba(142, 128, 128, 0.75);
-    -moz-box-shadow: 7px 9px 5px 1px rgba(142, 128, 128, 0.75);
-  }
-  
-  .sidebar.closed {
-    width: 80px;
-  }
-  
-  .toggle-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    cursor: pointer;
-  }
-  
-  .menu {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .menu-item {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    width: 100%;
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s;
-  }
-  
-  .menu-item:hover {
-    background-color: #575757;
-  }
-  
-  .menu-item span {
-    margin-left: 10px;
-  }
-  
+  /* height: calc(95vh - 2rem); */
+  height: auto;
+  width: 12rem;
+  position: relative;
+  top: 1rem;
+  left: 0.2rem;
+  background-color: #e0e0e0; /* 30% Mild grey as background */
+  color: #333; /* 60% Dark grey text for content */
+  border-radius: 0 5px 5px 0;
+  transition: width 0.3s;
+  box-shadow: 7px 0px 5px 1px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.sidebar.closed {
+  width: 80px;
+}
+
+.toggle-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  cursor: pointer;
+  background-color: #800000; /* 10% Primary color for toggle button */
+  color: #ffffff; /* White text to ensure contrast */
+  border-radius: 0 5px 5px 0;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 10px; /* Add some padding for layout */
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  color: #333; /* Dark grey text for readability */
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.menu-item:hover {
+  background-color: #800000; /* 10% Primary color on hover */
+  color: #ffffff; /* White text on hover for contrast */
+}
+
+.menu-item span {
+  margin-left: 10px;
+}
+
+.resize-btn {
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #800000; /* 10% Primary color for resize button */
+  color: #ffffff; /* White text to ensure contrast */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: width 0.3s;
+}
+
+.menu-hidden{
+  display:none;
+}

@@ -1,8 +1,17 @@
+/* :root {
+  --primary-color: #800000;
+  --accent-color: #d4af37;
+  --background-color: #f5f5f5;
+} */
+
 :root {
-  --primary-color: #800000; /* Maroon */
-  --accent-color: #d4af37;  /* Gold */
-  --background-color: #f5f5f5; /* Light cream */
+  --primary-color: #800000; /* Accent color (10%) */
+  --secondary-color: #a55f5f; /* Secondary color (30%) */
+  --dominant-color: #ffffff; /* Dominant color (60%) */
+  --text-color: #333; /* Standard text color */
+  --border-color: #cccccc; /* Light grey for borders */
 }
+
 .App {
   text-align: center;
   display: flex;
@@ -18,7 +27,7 @@
 main {
   flex: 1;
   padding: 20px;
-  overflow: auto;
+  /* overflow: auto; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,20 +39,33 @@ main {
   justify-content: center;
   flex-wrap: wrap;
   width: 80%;
-  background-color: #ffffff;
+  background-color: #ffffff; /* White background */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 10px;
 }
 
+/* This selector was redundant and conflicted with the later definition */
 .cardClass > .cardClass1, .cardClass > .cardClass2, .cardClass > .cardClass3 {
-  background-color: #e0e0e0;
+  /* Removed background-color as it conflicts with the hover background-color */
   margin: 10px;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.small {
-  font-size: 0.75rem;
+/* Specific styles for cardClass1, cardClass2, and cardClass3 */
+.cardClass1, .cardClass2, .cardClass3 {
+  background-color: #ffffff; /* White card background */
+  border: 1px solid #cccccc; /* Light grey border */
+  color: #333; /* Dark grey text */
+  margin: 10px; /* Ensure there's space between cards */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardClass1:hover, .cardClass2:hover, .cardClass3:hover {
+  background-color: #800000; /* Primary color on hover */
+  color: #ffffff; /* White text on hover */
 }
