@@ -1,6 +1,6 @@
 import React from "react";
 import { FaUser} from 'react-icons/fa';
-import '../styles/HeaderComponent.css';
+import '../styles/Header.css';
 
 const HeaderComponent = ()=>{
 return(

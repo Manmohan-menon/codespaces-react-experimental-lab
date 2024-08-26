@@ -60,7 +60,7 @@
   font-weight: 600;
   text-decoration: underline;
   color: #800000; /* 10% Primary color for text emphasis */
-  background-color: #e0e0e0; /* 30% Mild grey background for title area */
+  background-color: #f9f9f9; /* 30% Light grey background for title area */
 }
 
 /* Media Queries for Responsiveness */

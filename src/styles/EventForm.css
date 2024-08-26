@@ -1,0 +1,54 @@
+.event-form {
+    background-color: #ffffff; /* 60% neutral color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .event-form h2 {
+    color: #800000;
+    text-align: center;
+    font-weight:normal ;
+  }
+  
+  .event-form input,
+  .event-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .event-form input:focus,
+  .event-form textarea:focus {
+    border-color: #800000; /* 10% primary color on focus */
+    outline: none;
+  }
+  
+  .event-form button {
+    border-color: #800000; /* 10% primary color */
+    color: #333; /* White text */
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .event-form button:hover {
+    background: linear-gradient(to bottom, #950000, #800000); /* Darker shade on hover */
+  }
+  
+  .event-form button:active {
+    background: linear-gradient(to bottom, #950000fb, #800000); /* Even darker shade on active */
+  }
+  

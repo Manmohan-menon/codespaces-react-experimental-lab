@@ -1,6 +1,6 @@
 import React from "react";
 import {FaFacebook, FaInstagram} from 'react-icons/fa';
-import '../styles/FooterComponent.css';
+import '../styles/Footer.css';
 
 const FooterComponent = ()=>{
     const year = new Date().getFullYear();

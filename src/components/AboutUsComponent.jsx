@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
-import '../styles/AboutUsComponent.css';
-//import kathakImage from './public/paulomi_5.jpg';
+import '../styles/AboutUs.css';
 
 const AboutUsComponent = () => {
     useEffect(() => {

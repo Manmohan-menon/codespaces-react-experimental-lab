@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaHome, FaInfoCircle, FaEnvelope, FaBars, FaTheaterMasks, FaShoppingBag, FaPlus, FaMinus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import '../styles/SidePanelComponent.css';
+import '../styles/SidePanel.css';
 
 const SidePanelComponent = () => {
     const [isOpen, setIsOpen] = useState(true);
@@ -15,9 +15,9 @@ const SidePanelComponent = () => {
     };
     return (
         <div className={`sidebar ${isOpen ? 'open' : 'closed'}`} style={{ width: isResized ? '1%' : '' }}>
-          <div className="toggle-btn" onClick={toggleSidebar}>
+          {!isResized &&(<div className="toggle-btn" onClick={toggleSidebar}>
             <FaBars />
-          </div>
+          </div>)}
           {!isOpen && (<div className="resize-btn" onClick={toggleResize}>
                 {isResized ? <FaPlus /> : <FaMinus />}
             </div>)}
