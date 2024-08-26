@@ -9,6 +9,7 @@ import LessonsComponent from './components/LessonsComponent';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BaseCardComponent from './components/BaseCardComponent';
 import NewEventsComponent from './components/NewEventsComponent';
+import ContactUsComponent from './components/ContactUsComponent';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
               <Route path="/" element={<ImageCarousel />} />
               <Route path="/newevents" element={<NewEventsComponent />} />
               <Route path="/aboutus" element={<AboutUsComponent />} />
-              <Route path="/lessons" element={<LessonsComponent />} />              
+              <Route path="/lessons" element={<LessonsComponent />} />
+              <Route path="/contactus" element={<ContactUsComponent />} />
             </Routes>
             <div className='cardClass'>
               <BaseCardComponent 
