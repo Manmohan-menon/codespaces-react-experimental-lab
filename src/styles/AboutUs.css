@@ -5,7 +5,12 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: auto;
     margin-bottom: 30px;
-    max-width: 800px;
+    /* max-width: 800px; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .about-us h1 {
@@ -34,9 +39,9 @@
 }
 
 .about-us img {
-    width: 100%;
-    height: auto; /* Let the height adjust naturally */
-    object-fit: cover; /* Ensures the image covers the space */
+    /*width: 100%;
+    height: auto;*/ /* Let the height adjust naturally */
+    object-fit: contain; /* Ensures the image covers the space */
     border-radius: 8px; /* Matches the container's border-radius */
     margin-bottom: 20px;
 }

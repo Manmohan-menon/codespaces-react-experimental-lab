@@ -32,24 +32,27 @@ main {
   justify-content: space-evenly;
   flex-wrap: wrap;
   width: 80%;
-  background-color: #ffffff;
+  background-color: var(--dominant-color);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 10px;
 }
 
 .cardClass1 {
-  background-color: #ffffff; /* White card background */
+  background-color: var(--dominant-color); /* White card background */
   border: 1px solid #cccccc; /* Light grey border */
   color: #333; /* Dark grey text */
   margin: 10px;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  height: 17rem;
+  /* height: 17rem; */
+  min-height: 15.5rem;
+  max-height: 16.5rem;
   width: 15rem;
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -57,8 +60,8 @@ main {
 }
 
 .cardClass1:hover {
-  background-color: #800000; /* Primary color on hover */
-  color: #ffffff; /* White text on hover */
+  background-color: var(--primary-color); /* Primary color on hover */
+  color: var(--dominant-color); /* White text on hover */
 }
 
 .cardClass1::before {
@@ -80,12 +83,67 @@ main {
 .card-content {
   z-index: 1; /* Ensure text is above the glossy effect */
   text-align: center;
+  padding-bottom: 1.5rem;
+}
+
+.background-section {
+  background-color: var(--secondary-color);
+  width: 20rem;
+  padding-top: 50%;
+  position: relative;
+}
+
+.corner-dotspot-top-right{
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  filter: brightness(1.2); /* Slightly increases the brightness */
+  background: linear-gradient(145deg, #f0f0f0, #ffffff, #d9d9d9);
+  background-size: 200% 200%;
+  animation: shimmer 2s infinite alternate;
+}
+
+.corner-dotspot-bottom-left{
+  position: absolute;
+  bottom: 10px;
+  left: 40px;
+  width: 20px;
+  height: 21px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  filter: brightness(1.2); /* Slightly increases the brightness */
+  background: linear-gradient(145deg, #f0f0f0, #ffffff, #d9d9d9);
+  background-size: 200% 200%;
+  animation: shimmer 2s infinite alternate;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -20px;
+  }
+  100% {
+    background-position: 20px;
+  }
 }
 
 .miniature-component {
   transform: scale(0.9);
   transform-origin: top left;
   overflow: hidden;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.miniature-component-1 {
+  transform: scale(1);
+  transform-origin: top left;
+  overflow: auto;
+  overflow-y: hidden;
   height: 100%;
   width: 100%;
   box-sizing: border-box;

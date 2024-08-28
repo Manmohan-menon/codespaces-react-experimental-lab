@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BaseCardComponent from './components/BaseCardComponent';
 import NewEventsComponent from './components/NewEventsComponent';
 import ContactUsComponent from './components/ContactUsComponent';
+import CollaborationComponent from './components/CollaborationComponent';
 
 function App() {
   return (
@@ -25,22 +26,26 @@ function App() {
               <Route path="/aboutus" element={<AboutUsComponent />} />
               <Route path="/lessons" element={<LessonsComponent />} />
               <Route path="/contactus" element={<ContactUsComponent />} />
+              <Route path="/collaborations" element={<CollaborationComponent />} />
             </Routes>
             <div className='cardClass'>
               <BaseCardComponent 
                   frontContent="Upcoming Events" 
                   backContent={<NewEventsComponent />} 
                   route="/newevents" 
+                  extendTimer={false}
                 />
                 <BaseCardComponent 
                   frontContent="Past Events" 
                   backContent={<LessonsComponent />} 
                   route="/lessons" 
+                  extendTimer={false}
                 />
                 <BaseCardComponent 
                   frontContent="Collaborations" 
-                  backContent={<AboutUsComponent />} 
-                  route="/aboutus" 
+                  backContent={<CollaborationComponent />} 
+                  route="/collaborations" 
+                  extendTimer={false}
                 />
             </div>
           </main>
