@@ -44,8 +44,8 @@ const ImageCarousel = () => {
         showArrows={true}
         showThumbs={false}
         infiniteLoop={true}
-        centerMode={true}
-        centerSlidePercentage={80}
+        centerMode={false}
+        // centerSlidePercentage={80}
       >
         {images.map((image, index) => (
           <div key={index} className='carousel-slide'>

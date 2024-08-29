@@ -17,12 +17,12 @@
 }
 
 .carousel .slide img {
-  width: 100%;
-  max-width: 600px;
+  /* width: 100%; */
+  /* max-width: 600px; */
   height: 400px;
-  object-fit: contain;
-  border: 2px solid #e0e0e0; /* 30% Light grey border around images */
-  border-radius: 5px; /* Slight rounding to soften edges */
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
 }
 
 .carousel .control-arrow {
