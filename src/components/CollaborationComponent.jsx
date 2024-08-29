@@ -51,7 +51,7 @@ const CollaborationComponent = () => {
                     <div className='collaborate-card'>
                         <h3>{event.title}</h3>
                         <h4>{event.location}</h4>
-                        <p>{`${event.startDate} - ${event.endDate}`}</p>                        
+                        <p>{`${event.startDate}`}</p>                        
                         {/* <p>{event.description}</p> */}
                     </div>
                 }
