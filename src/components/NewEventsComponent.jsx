@@ -66,6 +66,21 @@ const NewEventsComponent = () => {
           </table>
         );
       };
+
+      const templateConfig = {
+        showStartDate: true,
+        showEndDate: true,
+        showTitle: true,
+        showLocation: true,
+        showStartTime: true,
+        showEndTime: true,
+        showDescription: true,
+        showVideo: false,
+        showName: false,
+        showEmail: false,
+        showMessage: false,
+        submitButtonText: 'Add'
+      };
       return (
         <div className="new-events">
             <h1>Upcoming Events</h1>
@@ -76,7 +91,7 @@ const NewEventsComponent = () => {
                 </div>
             )}
             <div className="event-card">
-                {showForm ? <EventFormComponent onFormSubmit={handleFormSubmit} /> : renderTable()}
+                {showForm ? <EventFormComponent templateConfig={templateConfig} onFormSubmit={handleFormSubmit} /> : renderTable()}
             </div>
         </div>
     );

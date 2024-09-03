@@ -1,11 +1,11 @@
-.header {
+/*.header {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 10px;
-  background-color: #ffffff; /* 60% White background */
-  border-bottom: 2px solid #800000; /* 10% Primary color as border */
-  color: #333; /* 30% Dark grey text */
+  background-color: #ffffff;
+  border-bottom: 2px solid #800000;
+  color: #333;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   position: sticky;
@@ -14,20 +14,19 @@
   z-index: 1000;
 }
 
-.header .logo {
+.logo {
   width: 6.5rem;
   height: 5rem;
   margin-right: 20px;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* transform: rotate(3.8deg); */
   animation: pendulum 2s infinite ease-in-out;
 }
 
 .header .icons{
   display: flex;
   gap: 10px;
-  color: #800000; /* 10% Primary color for icons to draw attention */
+  color: #800000;
 }
 
 @keyframes pendulum {
@@ -48,37 +47,7 @@
   }
 }
 
-.header .title {
-  flex: 1;
-  text-align: center;
-  box-shadow: 6.5px 4px 5px 1px rgba(142, 128, 128, 0.75); /* Milder shadow */
-  -webkit-box-shadow: 6.5px 4px 5px 1px rgba(142, 128, 128, 0.75);
-  -moz-box-shadow: 6.5px 4px 5px 1px rgba(142, 128, 128, 0.75);
-  max-width: 18rem;
-  border-radius: 45%;
-  height: 2rem;
-  font-weight: 600;
-  text-decoration: underline;
-  color: #800000; /* 10% Primary color for text emphasis */
-  background-color: #f9f9f9; /* 30% Light grey background for title area */
-}
-
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .header {
-      flex-direction: row;
-      align-items: center;
-      text-align: center;
-      padding: 15px;
-  }
-
-  .logo {
-      width: 6rem;
-      height: 6rem;
-      margin-right: 0;
-      margin-bottom: 10px;
-  }
-
   .header .title {
       max-width: 100%;
       margin-bottom: 10px;
@@ -96,11 +65,6 @@
       padding: 10px;
   }
 
-  .logo {
-      width: 3.5rem;
-      height: 2.5rem;
-  }
-
   .header .title {
       font-size: 1rem;
       padding: 5px 10px;
@@ -111,5 +75,75 @@
 
   .header .icons {
       gap: 8px;
+  }
+}*/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #800000;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  width: 6.5rem;
+  height: 5rem;
+  margin-right: 20px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: pendulum 2s infinite ease-in-out;
+}
+
+.header__icons {
+  display: flex;
+  gap: 10px;
+  color: #800000;
+}
+
+@keyframes pendulum {
+  0%, 50%, 100% {
+    transform: rotate(3.8deg);
+  }
+  25%, 75% {
+    transform: rotate(5deg);
+  }
+}
+
+@media (max-width: 768px) {
+  /* .header__title {
+    max-width: 100%;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  } */
+
+  .header__icons {
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px;
+  }
+
+  /* .header__title {
+    font-size: 1rem;
+    padding: 5px 10px;
+    width: auto;
+    background-color: #fff;
+    box-shadow: none;
+  } */
+
+  .header__icons {
+    gap: 8px;
   }
 }

@@ -27,14 +27,10 @@ main {
 }
 
 .cardClass {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  width: 80%;
+  width: 100%;
+  padding: 20px;
   background-color: var(--dominant-color);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   border-radius: 10px;
 }
 
@@ -46,7 +42,6 @@ main {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  /* height: 17rem; */
   min-height: 15.5rem;
   max-height: 16.5rem;
   width: 15rem;
@@ -93,7 +88,7 @@ main {
   position: relative;
 }
 
-.corner-dotspot-top-right{
+.corner-dotspot-top-right {
   position: absolute;
   top: 15px;
   right: 35px;
@@ -107,7 +102,7 @@ main {
   animation: shimmer 2s infinite alternate;
 }
 
-.corner-dotspot-bottom-left{
+.corner-dotspot-bottom-left {
   position: absolute;
   bottom: 10px;
   left: 40px;
