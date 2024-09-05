@@ -1,61 +1,27 @@
 # GitHub Codespaces ♥️ React
 
-Started as tiny trail or experimental web app for a Friend's wife. Sort of reimagining and showcasing kathak lessaons and updates on events and merchandise. few of them are currently niche stage. But hopefully will be added in future. Watch this space!.
+Started as tiny trail or experimental web app for a Friend. In a nutshell this app is sort of reimagining and showcasing kathak lessaons and updates on events and merchandise. few of them are currently niche stage. But hopefully will be added in future. Watch this space!.
 
-This project was bootstrapped for you with [Vite](https://vitejs.dev/).
+## Project overflow
 
-## Available Scripts
+In the project directory, you can find the following modules of interest: 
+ - About us : completed
+ - lessons: completed
+ - contact us: completed
+ - upcoming events: completed
+ - past events: todo
+ - collaborations(video) : completed
+ - Merchandise: todo
 
-In the project directory, you can run:
+### modules used
 
-### `npm start`
- If you need to stop the server for any reason you can just run `npm start` again to bring it back online.
-
-Runs the app in the development mode.\
-Open [http://localhost:3000/](http://localhost:3000/) in the built-in Simple Browser (`Cmd/Ctrl + Shift + P > Simple Browser: Show`) to view your running application.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## Learn More
-
-You can learn more in the [Vite documentation](https://vitejs.dev/guide/).
-
-To learn Vitest, a Vite-native testing framework, go to [Vitest documentation](https://vitest.dev/guide/)
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://sambitsahoo.com/blog/vite-code-splitting-that-works.html](https://sambitsahoo.com/blog/vite-code-splitting-that-works.html)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://github.com/btd/rollup-plugin-visualizer#rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer#rollup-plugin-visualizer)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://dev.to/hamdankhan364/simplifying-progressive-web-app-pwa-development-with-vite-a-beginners-guide-38cf](https://dev.to/hamdankhan364/simplifying-progressive-web-app-pwa-development-with-vite-a-beginners-guide-38cf)
-
-### Advanced Configuration
-
-This section has moved here: [https://vitejs.dev/guide/build.html#advanced-base-options](https://vitejs.dev/guide/build.html#advanced-base-options)
-
-### Deployment
-
-This section has moved here: [https://vitejs.dev/guide/build.html](https://vitejs.dev/guide/build.html)
+- react-responsive-carousel : for image carousel
+- prop-types: adding support for prop-types
+- react
+- react-card-flip: for implemeting card flip logic
+- react-icons: fontawesome 
+- react-player: for showing vimeo player
+- @mui/material: Material Ui
 
 ### Troubleshooting
 

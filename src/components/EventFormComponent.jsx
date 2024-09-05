@@ -40,28 +40,50 @@ const EventFormComponent = ({ templateConfig, onFormSubmit }) => {
   };
 
   const renderFields = () => {
+    const inputFields = [
+      { condition: templateConfig.showStartDate, type: "date", name: "startDate", placeholder: "", value: formData.startDate },
+      { condition: templateConfig.showEndDate, type: "date", name: "endDate", placeholder: "", value: formData.endDate },
+      { condition: templateConfig.showTitle, type: "text", name: "title", placeholder: "Event Title", value: formData.title },
+      { condition: templateConfig.showLocation, type: "text", name: "location", placeholder: "Location", value: formData.location },
+      { condition: templateConfig.showStartTime, type: "time", name: "startTime", placeholder: "", value: formData.startTime },
+      { condition: templateConfig.showEndTime, type: "time", name: "endTime", placeholder: "", value: formData.endTime },
+      { condition: templateConfig.showDescription, type: "textarea", name: "description", placeholder: "Event Description", value: formData.description, rows: 5, cols: 5 },
+      { condition: templateConfig.showVideo, type: "text", name: "video", placeholder: "Event Video Link", value: formData.video },
+      { condition: templateConfig.showName, type: "text", name: "name", placeholder: "Enter Your Name", value: formData.name },
+      { condition: templateConfig.showEmail, type: "text", name: "email", placeholder: "Enter Your Email", value: formData.email },
+      { condition: templateConfig.showMessage, type: "textarea", name: "message", placeholder: "Enter Your Message", value: formData.message, rows: 5, cols: 5 }
+    ];
+  
     return (
         <>
-            {templateConfig.showStartDate &&(<input type="date" name="startDate" value={formData.startDate} onChange={handleChange} />)}
-            {templateConfig.showEndDate && (
-                <input type="date" name="endDate" value={formData.endDate} onChange={handleChange} />
+            {inputFields.map((field, index) => 
+                field.condition && (
+                    field.type === "textarea" ? (
+                        <textarea
+                            key={index}
+                            name={field.name}
+                            value={field.value}
+                            onChange={handleChange}
+                            rows={field.rows}
+                            cols={field.cols}
+                            placeholder={field.placeholder}
+                        />
+                    ) : (
+                        <input
+                            key={index}
+                            type={field.type}
+                            name={field.name}
+                            value={field.value}
+                            onChange={handleChange}
+                            placeholder={field.placeholder}
+                        />
+                    )
+                )
             )}
-            {templateConfig.showTitle && (<input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Event Title" />)}
-            {templateConfig.showLocation && (<input type="text" name="location" value={formData.location} onChange={handleChange} placeholder="Location" />)}
-            {templateConfig.showStartTime && (<input type="time" name="startTime" value={formData.startTime} onChange={handleChange} />)}
-            {templateConfig.showEndTime && (<input type="time" name="endTime" value={formData.endTime} onChange={handleChange} />)}
-            {templateConfig.showDescription && (
-                <textarea name="description" value={formData.description} onChange={handleChange} rows={5} cols={5} placeholder="Event Description" />
-            )}
-            {templateConfig.showVideo && (
-                <input type="text" name="video" value={formData.video} onChange={handleChange} placeholder="Event Video Link" />
-            )}
-            {templateConfig.showName && ( <input type="text" name="Name" value={formData.name} onChange={handleChange} placeholder="Enter Your Name" />)}
-            {templateConfig.showEmail && (<input type="text" name="Email" value={formData.email} onChange={handleChange} placeholder="Enter Your Email" />)}
-            {templateConfig.showMessage &&(<textarea name="Message" value={formData.message} onChange={handleChange} rows={5} cols={5} placeholder="Enter Your message query" />)}
         </>
-    );
+    )
   };
+    
 
   return (
     <form onSubmit={handleSubmit} className="event-form">

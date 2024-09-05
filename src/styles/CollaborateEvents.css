@@ -14,7 +14,7 @@
     margin-bottom: 20px;
   }
   
-  .form-btn {
+  .collaborate-events .form-btn {
     cursor: pointer;
     margin-bottom: 20px;
     display: flex;
@@ -32,17 +32,17 @@
     z-index: 1; /* Ensure the button appears above the dropdown */
   }
   
-  .form-btn:hover {
+  .collaborate-events .form-btn:hover {
     background: linear-gradient(to bottom, #950000, #800000);
     color: #ffffff; /* White text on hover for contrast */
   }
   
-  .toggle-icon {
+  .collaborate-events .toggle-icon {
     margin-right: 10px;
     transition: transform 0.3s ease;
   }
   
-  .toggle-text {
+  .collaborate-events .toggle-text {
     font-size: 16px;
   }
   

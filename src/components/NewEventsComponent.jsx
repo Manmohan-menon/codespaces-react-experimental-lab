@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import '../styles/NewEvents.css';
 import EventFormComponent from '../components/EventFormComponent';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import Grid2 from '@mui/material/Grid2';
+import { Typography, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Button } from '@mui/material';
 
 
 const NewEventsComponent = () => {
@@ -42,28 +44,30 @@ const NewEventsComponent = () => {
     
       const renderTable = () => {
         return (
-          <table className="events-table" style={{ borderCollapse: 'collapse', width: '100%' }}>
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Title</th>
-                <th>Time</th>
-                <th>Location</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {events.map((event, index) => (
-                <tr key={index}>
-                  <td>{`${event.startDate} - ${event.endDate}`}</td>
-                  <td>{event.title}</td>
-                  <td>{`${event.startTime} - ${event.endTime}`}</td>
-                  <td>{event.location}</td>
-                  <td>{event.description}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <TableContainer component={Paper}>
+            <Table className='events-table' aria-label='events table'>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Date</TableCell>
+                  <TableCell>Title</TableCell>
+                  <TableCell>Time</TableCell>
+                  <TableCell>Location</TableCell>
+                  <TableCell>Description</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {events.map((event, index) => (
+                  <TableRow key={index}>
+                    <TableCell>{`${event.startDate} - ${event.endDate}`}</TableCell>
+                    <TableCell>{event.title}</TableCell>
+                    <TableCell>{`${event.startTime} - ${event.endTime}`}</TableCell>
+                    <TableCell>{event.location}</TableCell>
+                    <TableCell>{event.description}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
         );
       };
 
@@ -82,18 +86,25 @@ const NewEventsComponent = () => {
         submitButtonText: 'Add'
       };
       return (
-        <div className="new-events">
-            <h1>Upcoming Events</h1>
-            {process.env.NODE_ENV === 'development' && (
-                <div className="form-btn" onClick={toggleForm}>
-                    {isOpen ? <FaChevronUp className="toggle-icon" /> : <FaChevronDown className="toggle-icon" />}
-                    <span className="toggle-text">{isOpen ? 'Show Form' : 'Hide Form'}</span>
-                </div>
-            )}
-            <div className="event-card">
+        <Paper className="new-events" elevation={3}>
+          <Grid2 container spacing={3} justifyContent="center" alignItems="center" direction="column">
+              <Grid2 item xs={12} className="new-events-header">
+                  <Typography variant="h1" component="h1" color="primary">
+                     Upcoming Events
+                  </Typography>
+              </Grid2>
+              {process.env.NODE_ENV === 'development' && (
+                <Grid2 item xs={12} className="form-btn">
+                  <Button onClick={toggleForm} variant="contained" color="primary" endIcon={isOpen ? <FaChevronUp /> : <FaChevronDown />}>
+                    {isOpen ? 'Hide Form' : 'Show Form'}
+                  </Button>
+                </Grid2>
+              )}
+              <Grid2 item xs={12} className="event-card">
                 {showForm ? <EventFormComponent templateConfig={templateConfig} onFormSubmit={handleFormSubmit} /> : renderTable()}
-            </div>
-        </div>
+              </Grid2>
+          </Grid2>
+       </Paper>
     );
 };
 

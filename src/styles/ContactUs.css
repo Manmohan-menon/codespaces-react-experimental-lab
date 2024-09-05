@@ -5,28 +5,22 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: auto;
     margin-bottom: 30px;
-    max-width: 800px;
+    width: 100%;
+}
+
+.contact-us-header {
     text-align: center;
 }
 
 .contact-us h1 {
-    color: #800000;
     font-weight: bold;
-}
-
-.contact-us p {
-    color: #333;
-    font-size: 16px;
-    margin: 20px 0;
+    font-size: 2rem;
 }
 
 .contact-form-placeholder {
     margin-top: 20px;
 }
 
-.contact-form-placeholder h3 {
-    color: #800000;
-}
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -37,9 +31,5 @@
 
     .contact-us h1 {
         font-size: 20px;
-    }
-
-    .contact-us p, .contact-form-placeholder h3 {
-        font-size: 14px;
     }
 }
