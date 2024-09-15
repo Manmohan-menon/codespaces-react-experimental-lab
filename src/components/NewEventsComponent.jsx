@@ -13,34 +13,61 @@ const NewEventsComponent = () => {
 
     useEffect(() => {
         document.title = 'New Events';
-        loadEventsFromLocalStorage();
+        loadEventsFromJson();
     }, []);
 
     const toggleForm = () => {
         setIsOpen(!isOpen);
         setShowForm(!showForm);
       };
-    const handleFormSubmit = (data) => {
-        addEventToLocalStorage(data);
-        loadEventsFromLocalStorage();
+    const handleFormSubmit = async (data) => {
+        await addEventToJson(data);
+        loadEventsFromJson()
     };
     
-    const loadEventsFromLocalStorage = () => {
-        const storedEvents = window.localStorage.getItem('events');
-        if (storedEvents) {
-            setEvents(JSON.parse(storedEvents));
+    const loadEventsFromJson = async () => {
+      try {
+        const response = await fetch('/event-data.json');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
         }
+        const text = await response.text();
+        const data = text ? JSON.parse(text) : [];
+
+        const currentDate = new Date();
+
+        const filteredData = data.filter(event =>{
+          const eventDate = new Date(event.startDate);
+          return eventDate >= currentDate;
+        })
+        setEvents(filteredData);
+      } catch (error) {
+        console.error('Error loading events:', error);
+      }
     };
-    const addEventToLocalStorage = (eventData) => {
-        const existingEvents = window.localStorage.getItem('events');
-        if (existingEvents) {
-          const parsedEvents = JSON.parse(existingEvents);
-          parsedEvents.push(eventData);
-          window.localStorage.setItem('events', JSON.stringify(parsedEvents));
-        } else {
-          window.localStorage.setItem('events', JSON.stringify([eventData]));
+  
+    const addEventToJson = async (eventData) => {
+      try {
+        console.log('Sending data:', eventData);
+        const response = await fetch('http://localhost:5000/save-events', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(eventData),
+        });
+        console.log('Response status:', response.status);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
-      };
+        const result = await response.json();
+        console.log('Result:', result);
+        // alert('Event saved successfully!');
+      } catch (error) {
+        console.error('Error saving event:', error.message);
+        // alert('Failed to save event. Please try again.');
+      }
+    };
     
       const renderTable = () => {
         return (
@@ -96,7 +123,7 @@ const NewEventsComponent = () => {
               {process.env.NODE_ENV === 'development' && (
                 <Grid2 item xs={12} className="form-btn">
                   <Button onClick={toggleForm} variant="contained" color="primary" endIcon={isOpen ? <FaChevronUp /> : <FaChevronDown />}>
-                    {isOpen ? 'Hide Form' : 'Show Form'}
+                    {isOpen ? 'Show Form' : 'Hide Form'}
                   </Button>
                 </Grid2>
               )}

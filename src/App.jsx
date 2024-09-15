@@ -9,6 +9,7 @@ import LessonsComponent from './components/LessonsComponent';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BaseCardComponent from './components/BaseCardComponent';
 import NewEventsComponent from './components/NewEventsComponent';
+import PastEventsComponent from './components/PastEventsComponent';
 import ContactUsComponent from './components/ContactUsComponent';
 import CollaborationComponent from './components/CollaborationComponent';
 import Layout from './components/LayoutComponent';
@@ -43,6 +44,7 @@ function App() {
                 <Route path="/lessons" element={<LessonsComponent />} />
                 <Route path="/contactus" element={<ContactUsComponent />} />
                 <Route path="/collaborations" element={<CollaborationComponent />} />
+                <Route path="/pastevents" element={<PastEventsComponent />} />
               </Routes>
             <Grid2 container spacing={3} className="cardClass" justifyContent={'center'} alignItems={'center'}>
                 <Grid2 item xs={12} sm={6} md={4}>
@@ -56,8 +58,8 @@ function App() {
                 <Grid2 item xs={12} sm={6} md={4}>
                   <BaseCardComponent 
                     frontContent="Past Events" 
-                    backContent={<LessonsComponent />} 
-                    route="/lessons" 
+                    backContent={<PastEventsComponent />} 
+                    route="/pastevents" 
                     extendTimer={false}
                   />
                 </Grid2>

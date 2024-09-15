@@ -1,9 +1,10 @@
-import React, {useState, useEffect, useRef} from 'react';
-import '../styles/CollaborateEvents.css';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import React, { useState, useEffect, useRef } from 'react';
+import { Box, Button, Typography, IconButton, Collapse, Paper, Grid2 } from '@mui/material';
+import { ExpandMore, ExpandLess } from '@mui/icons-material';
 import BaseCardComponent from './BaseCardComponent';
 import ReactPlayer from 'react-player';
 import EventFormComponent from './EventFormComponent';
+import '../styles/CollaborateEvents.css';
 
 
 const CollaborationComponent = () => {
@@ -41,22 +42,23 @@ const CollaborationComponent = () => {
         } else {
           window.localStorage.setItem('collaborateEvents', JSON.stringify([eventData]));
         }
-      };
+    };
     
       const renderCard = () => {
             return collaborateEvents.map((event, index) => (
+
                 <BaseCardComponent 
                     key={index} 
                     frontContent={
-                        <div className='collaborate-card'>
-                            <h3>{event.title}</h3>
-                            <h4>{event.location}</h4>
-                            <p>{`${event.startDate}`}</p>                        
-                            {/* <p>{event.description}</p> */}
-                        </div>
+                        <Box>
+                            <Typography variant="h5">{event.title}</Typography>
+                            <Typography variant="subtitle1">{event.location}</Typography>
+                            <Typography variant="body2">{`${event.startDate}`}</Typography>
+                            {console.log(playerRef.current)}
+                        </Box>
                     }
                     backContent={
-                        <div>
+                        <Box>
                             <ReactPlayer
                                 ref={playerRef} 
                                 url={event.video}
@@ -65,15 +67,16 @@ const CollaborationComponent = () => {
                                 controls={true}
                                 onPause={() => {
                                     setTimeout(() => {
-                                    if (playerRef.current) {
-                                        playerRef.current.seekTo(0);
-                                    }
+                                        if (playerRef.current[index]) {
+                                            playerRef.current[index].seekTo(0);
+                                        }
                                     }, 50000);
                                 }}
                             />
-                        </div>
+                        </Box>
                     }
                     route={event.route}
+                    playerRef={playerRef.current}
                     extendTimer={true}
                 />
             ));
@@ -93,21 +96,36 @@ const CollaborationComponent = () => {
             submitButtonText: 'Add Video'
         };
       return (
-        <div className="collaborate-events">
-            <h1>Collaborations</h1>
-            {process.env.NODE_ENV === 'development' && (
-                <div className="form-btn" onClick={toggleForm}>
-                    {isOpen ? <FaChevronUp className="toggle-icon" /> : <FaChevronDown className="toggle-icon" />}
-                    <span className="toggle-text">{isOpen ? 'Show Form' : 'Hide Form'}</span>
-                </div>
-            )}
-            <div className="collaborate-event-card" style={{
-                display: !showForm ? 'flex' : '',
-                flexWrap: !showForm ? 'wrap' : 'nowrap',
-            }}>
-                {showForm ? <EventFormComponent onFormSubmit={handleFormSubmit} templateConfig={templateConfig} /> : renderCard()}
-            </div>
-        </div>
+        <Paper className="collaborate-events" elevation={3}>
+          <Grid2 container spacing={3} justifyContent="center" alignItems="center" direction="column">
+              <Grid2 item xs={12} className="collaborate-events-header">
+                  <Typography variant="h1" component="h1" color="primary">
+                     Collborations
+                  </Typography>
+              </Grid2>
+                {process.env.NODE_ENV === 'development' ? (
+                    <>
+                        <Grid2 item xs={12} className="form-btn">
+                            <Button variant="contained" color="primary" onClick={toggleForm} sx={{ marginBottom: 2 }}>
+                                {isOpen ? <ExpandLess /> : <ExpandMore />}
+                                {isOpen ? 'Show Form' : 'Hide Form'}
+                            </Button>
+                        </Grid2>
+                        {/* <Grid2 item xs={12} className="collaborate-event-card" sx={{ display: !showForm ? 'flex' : 'block', flexWrap: !showForm ? 'wrap' : 'nowrap' }}>
+                            {showForm ? <EventFormComponent onFormSubmit={handleFormSubmit} templateConfig={templateConfig} /> : renderCard()}
+                        </Grid2> */}
+
+                        <Box sx={{ display: !showForm ? 'flex' : 'block', flexWrap: !showForm ? 'wrap' : 'nowrap' }}>
+                            {showForm ? <EventFormComponent onFormSubmit={handleFormSubmit} templateConfig={templateConfig} /> : renderCard()}
+                        </Box>
+                    </>
+                ) : (
+                    <Box className="collaborate-events" sx={{ display: 'flex', flexWrap: 'wrap' }}>
+                        {renderCard()}
+                    </Box>
+                )}
+            </Grid2>
+        </Paper>
     );
 };
 
